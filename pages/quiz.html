@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz - Smart Learning Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+
+  <!--navigation bar-->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-text">
+          Smart Learning Hub
+          <small>Learn Smart. Grow Better.</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="quiz.html" class="active">Quiz</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!--page header-->
+  <section class="page-header">
+    <div class="container page-header-inner">
+      <span class="badge"><i class="fa-solid fa-puzzle-piece"></i> Test Your Knowledge</span>
+      <h1 class="page-title">Pick a Quiz, <span class="text-accent">Prove It.</span></h1>
+      <p class="page-subtext">
+        Quizzes are based on the courses you can browse on the Courses page.
+        Pick a topic, answer 5 quick questions, and beat your best score.
+      </p>
+    </div>
+  </section>
+
+
+  <!--quiz selection -->
+  <section class="quiz-select" id="quizSelectScreen">
+    <svg class="quiz-bg-art"
+     viewBox="0 0 1440 900"
+     xmlns="http://www.w3.org/2000/svg"
+     preserveAspectRatio="none">
+
+     <!--for the background strokes-->
+    <path
+        d="M -120 230
+           C 250 120, 560 320, 920 190
+           S 1420 80, 1600 170"
+        stroke="var(--primary)"
+        stroke-width="3"
+        fill="none"
+        opacity=".38"/>
+
+    <path
+        d="M -120 720
+           C 260 560, 700 860, 1550 610"
+        stroke="var(--accent)"
+        stroke-width="3"
+        fill="none"
+        opacity=".38"/>
+
+    <circle
+        cx="180"
+        cy="170"
+        r="90"
+        stroke="var(--yellow)"
+        stroke-width="2"
+        fill="none"
+        opacity=".28"/>
+
+    <circle
+        cx="1260"
+        cy="700"
+        r="120"
+        stroke="var(--primary)"
+        stroke-width="2"
+        fill="none"
+        opacity=".25"/>
+
+    <line
+        x1="1220"
+        y1="120"
+        x2="1320"
+        y2="120"
+        stroke="var(--accent)"
+        stroke-width="2"
+        opacity=".30"/>
+
+    <line
+        x1="1220"
+        y1="150"
+        x2="1380"
+        y2="150"
+        stroke="var(--accent)"
+        stroke-width="2"
+        opacity=".10"/>
+
+</svg>
+    <div class="container">
+      
+      <div class="quiz-select-grid" id="quizSelectGrid">
+
+        <div class="quiz-card" data-quiz="web">
+          <span class="course-tag tag-beginner">Web Dev</span>
+          <h3>Web Development Basics</h3>
+          <p>HTML, CSS &amp; JavaScript fundamentals.</p>
+          <div class="quiz-card-meta">
+            <span><i class="fa-solid fa-circle-question"></i> 5 questions</span>
+            <span class="quiz-best-score" data-best="web">Not attempted</span>
+          </div>
+          <button class="btn btn-primary btn-sm start-quiz-btn">Start Quiz <span>→</span></button>
+        </div>
+
+        <div class="quiz-card" data-quiz="design">
+          
+          <span class="course-tag tag-beginner">Design</span>
+          <h3>UI/UX Design Essentials</h3>
+          <p>Layout, color &amp; interface thinking.</p>
+          <div class="quiz-card-meta">
+            <span><i class="fa-solid fa-circle-question"></i> 5 questions</span>
+            <span class="quiz-best-score" data-best="design">Not attempted</span>
+          </div>
+          <button class="btn btn-primary btn-sm start-quiz-btn">Start Quiz <span>→</span></button>
+        </div>
+
+        <div class="quiz-card" data-quiz="data">
+          <span class="course-tag tag-intermediate">Data</span>
+          <h3>Data Analysis with Python</h3>
+          <p>Datasets, libraries &amp; visualization.</p>
+          <div class="quiz-card-meta">
+            <span><i class="fa-solid fa-circle-question"></i> 5 questions</span>
+            <span class="quiz-best-score" data-best="data">Not attempted</span>
+          </div>
+          <button class="btn btn-primary btn-sm start-quiz-btn">Start Quiz <span>→</span></button>
+        </div>
+
+        <div class="quiz-card" data-quiz="programming">
+          <span class="course-tag tag-beginner">Programming</span>
+          <h3>Python Programming Foundations</h3>
+          <p>Variables, loops &amp; logic building.</p>
+          <div class="quiz-card-meta">
+            <span><i class="fa-solid fa-circle-question"></i> 5 questions</span>
+            <span class="quiz-best-score" data-best="programming">Not attempted</span>
+          </div>
+          <button class="btn btn-primary btn-sm start-quiz-btn">Start Quiz <span>→</span></button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--active quiz screen-->
+  <section class="quiz-active" id="quizActiveScreen" hidden>
+    <div class="container quiz-active-inner">
+
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quizProgressFill"></div>
+      </div>
+
+      <div class="quiz-card-panel">
+        <div class="quiz-panel-top">
+          <span class="course-tag" id="quizActiveTag">Web Dev</span>
+          <span class="quiz-question-counter" id="quizCounter">Question 1 of 5</span>
+        </div>
+
+        <h2 class="quiz-question-text" id="quizQuestionText">Question goes here?</h2>
+
+        <div class="quiz-options" id="quizOptions">
+          <!-- options injected by JS -->
+        </div>
+
+        <div class="quiz-panel-actions">
+          <button class="btn btn-outline btn-sm" id="quizQuitBtn">Quit</button>
+          <button class="btn btn-primary" id="quizNextBtn" disabled>Next <span>→</span></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+<!--result of the quiz-->
+  <section class="quiz-results" id="quizResultsScreen" hidden>
+    <svg class="quiz-results-bg-art"
+     viewBox="0 0 1440 900"
+     xmlns="http://www.w3.org/2000/svg"
+     preserveAspectRatio="none">
+
+    <!--background strokes-->
+    <path
+        d="M -100 140
+           C 220 60, 520 220, 860 120
+           S 1340 60, 1540 120"
+        stroke="var(--primary)"
+        stroke-width="3"
+        fill="none"
+        opacity=".35"/>
+
+   
+    <path
+        d="M -80 760
+           C 260 620, 700 900, 1540 720"
+        stroke="var(--accent)"
+        stroke-width="3"
+        fill="none"
+        opacity=".35"/>
+
+   
+    <circle
+        cx="120"
+        cy="720"
+        r="95"
+        stroke="var(--primary)"
+        stroke-width="3"
+        fill="none"
+        opacity=".28"/>
+
+    
+    <circle
+        cx="1320"
+        cy="130"
+        r="120"
+        stroke="var(--yellow)"
+        stroke-width="3"
+        fill="none"
+        opacity=".28"/>
+
+    <line
+        x1="1180"
+        y1="250"
+        x2="1320"
+        y2="250"
+        stroke="var(--black)"
+        stroke-width="2.5"
+        opacity=".22"/>
+
+    <line
+        x1="1210"
+        y1="280"
+        x2="1370"
+        y2="280"
+        stroke="var(--black)"
+        stroke-width="2.5"
+        opacity=".22"/>
+
+
+    <line
+        x1="80"
+        y1="250"
+        x2="180"
+        y2="250"
+        stroke="var(--primary)"
+        stroke-width="2.5"
+        opacity=".25"/>
+
+    <line
+        x1="120"
+        y1="280"
+        x2="240"
+        y2="280"
+        stroke="var(--primary)"
+        stroke-width="2.5"
+        opacity=".25"/>
+
+</svg>
+    <div class="container quiz-results-inner">
+      <div class="quiz-results-card">
+        <span class="badge" id="quizResultsTopic">Web Dev Quiz</span>
+        <h2 class="quiz-results-score" id="quizResultsScore">4 / 5</h2>
+        <p class="quiz-results-percent" id="quizResultsPercent">80%</p>
+        <p class="quiz-results-message" id="quizResultsMessage">Nice work , solid grasp of the basics.</p>
+        <p class="quiz-results-best" id="quizResultsBest">Best score: 80%</p>
+
+        <div class="quiz-results-actions">
+          <button class="btn btn-outline" id="quizRetakeBtn">Retake Quiz</button>
+          <button class="btn btn-primary" id="quizBackBtn">Back to Quizzes <span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--footer section-->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col footer-brand">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">Smart Learning Hub</span>
+        </a>
+        <p>Learn Smart. Grow Better.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="../index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Smart Learning Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/quiz.js"></script>
+
+</body>
+</html>

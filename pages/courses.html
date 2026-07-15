@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses - Smart Learning Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/courses.css">
+</head>
+<body>
+
+  <!--navigtaion bar-->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-text">
+          Smart Learning Hub
+          <small>Learn Smart. Grow Better.</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="courses.html" class="active">Courses</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="navbar-actions">
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!--page header-->
+  <section class="page-header">
+    <div class="container page-header-inner">
+      <span class="badge"><i class="fa-solid fa-layer-group"></i> All Courses</span>
+      <h1 class="page-title">Find Your Next <span class="text-accent">Course.</span></h1>
+      <p class="page-subtext">
+        Browse every course on the board, search by topic, or filter by level to find the
+        right fit for where you are right now.
+      </p>
+    </div>
+  </section>
+
+
+  <!--search and filter bar-->
+  <section class="course-toolbar">
+    <div class="container course-toolbar-inner">
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="courseSearch" placeholder="Search courses e.g. 'JavaScript'...">
+      </div>
+
+      <div class="filter-pills" id="categoryFilters">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="web">Web Dev</button>
+        <button class="pill" data-filter="design">Design</button>
+        <button class="pill" data-filter="data">Data</button>
+        <button class="pill" data-filter="programming">Programming</button>
+      </div>
+
+      <div class="filter-select">
+        <label for="levelFilter" class="sr-only">Filter by level</label>
+        <select id="levelFilter">
+          <option value="all">All Levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+    </div>
+  </section>
+
+
+ <!--courses grid-->
+  <section class="courses-listing">
+
+    <svg class="courses-bg-art"
+     viewBox="0 0 1440 900"
+     xmlns="http://www.w3.org/2000/svg"
+     preserveAspectRatio="none">
+<!--for background strokes-->
+    <path
+        d="M -120 180
+           C 220 40, 560 260, 920 120
+           S 1420 80, 1600 160"
+        stroke="var(--primary)"
+        stroke-width="3"
+        fill="none"
+        opacity=".42"/>
+
+    <path
+        d="M -100 760
+           C 260 620, 700 900, 1600 700"
+        stroke="var(--accent)"
+        stroke-width="3"
+        fill="none"
+        opacity=".42"/>
+
+    <circle
+        cx="140"
+        cy="130"
+        r="85"
+        stroke="var(--yellow)"
+        stroke-width="3"
+        fill="none"
+        opacity=".32"/>
+
+    <circle
+        cx="1300"
+        cy="760"
+        r="120"
+        stroke="var(--primary)"
+        stroke-width="3"
+        fill="none"
+        opacity=".28"/>
+
+    <line
+        x1="1220"
+        y1="180"
+        x2="1350"
+        y2="180"
+        stroke="var(--black)"
+        stroke-width="2.5"
+        opacity=".30"/>
+
+    <line
+        x1="1180"
+        y1="210"
+        x2="1320"
+        y2="210"
+        stroke="var(--black)"
+        stroke-width="2.5"
+        opacity=".30"/>
+
+    <line
+        x1="80"
+        y1="640"
+        x2="200"
+        y2="640"
+        stroke="var(--primary)"
+        stroke-width="2.5"
+        opacity=".30"/>
+
+    <line
+        x1="120"
+        y1="670"
+        x2="250"
+        y2="670"
+        stroke="var(--primary)"
+        stroke-width="2.5"
+        opacity=".30"/>
+
+</svg>
+    <div class="container">
+
+      <p class="results-count" id="resultsCount">Showing 8 of 8 courses</p>
+
+      <div class="courses-grid" id="coursesGrid">
+
+        <!-- Course 1 -->
+        <div class="course-card" data-category="web" data-level="beginner" data-title="Web Development Basics">
+          <div class="course-thumb" style="--thumb-img: url('../assets/images/course-web-basics.jpg');" role="img" aria-label="Web Development Basics course"></div>
+          <div class="course-body">
+            <span class="course-tag tag-beginner">Beginner</span>
+            <h3>Web Development Basics</h3>
+            <p>Learn the fundamentals of HTML, CSS, and JavaScript from scratch.</p>
+            <div class="course-meta">
+              <span><i class="fa-regular fa-clock"></i> 6 weeks</span>
+              <span><i class="fa-solid fa-star"></i> 4.8</span>
+            </div>
+            <button class="btn btn-outline btn-sm view-course-btn">View Details</button>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card" data-category="programming" data-level="intermediate" data-title="Modern JavaScript">
+          <div class="course-thumb" style="--thumb-img: url('../assets/images/course-modern-javascript.jpg');" role="img" aria-label="Modern JavaScript course"></div>
+          <div class="course-body">
+            <span class="course-tag tag-intermediate">Intermediate</span>
+            <h3>Modern JavaScript</h3>
+            <p>Master ES6+, DOM manipulation, and real browser-based logic.</p>
+            <div class="course-meta">
+              <span><i class="fa-regular fa-clock"></i> 8 weeks</span>
+              <span><i class="fa-solid fa-star"></i> 4.9</span>
+            </div>
+            <button class="btn btn-outline btn-sm view-course-btn">View Details</button>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card" data-category="design" data-level="beginner" data-title="UI/UX Design Essentials">
+          <div class="course-thumb" style="--thumb-img: url('../assets/images/course-ui-ux-essentials.jpg');" role="img" aria-label="UI/UX Design Essentials course"></div>
+          <div class="course-body">
+            <span class="course-tag tag-beginner">Beginner</span>
+            <h3>UI/UX Design Essentials</h3>
+            <p>Understand layout, color, and typography for better interfaces.</p>
+            <div class="course-meta">
+              <span><i class="fa-regular fa-clock"></i> 5 weeks</span>
+              <span><i class="fa-solid fa-star"></i> 4.7</span>
+            </div>
+            <button class="btn btn-outline btn-sm view-course-btn">View Details</button>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card" data-category="data" data-level="intermediate" data-title="Data Analysis with Python">
+          <div class="course-thumb" style="--thumb-img: url('../assets/images/course-data-python.jpg');" role="img" aria-label="Data Analysis with Python course"></div>
+          <div class="course-body">
+            <span class="course-tag tag-intermediate">Intermediate</span>
+            <h3>Data Analysis with Python</h3>
+            <p>Clean, explore, and visualize real datasets using Pandas and Matplotlib.</p>
+            <div class="course-meta">
+              <span><i class="fa-regular fa-clock"></i> 7 weeks</span>
+              <span><i class="fa-solid fa-star"></i> 4.6</span>
+            </div>
+            <button class="btn btn-outline btn-sm view-course-btn">View Details</button>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="course-card" data-category="web" data-level="advanced" data-title="Responsive Layouts with Grid & Flexbox">
+          <div class="course-thumb" style="--thumb-img: url('../assets/images/course-grid-flexbox.jpg');" role="img" aria-label="Responsive Layouts course"></div>
+          <div class="course-body">
+            <span class="course-tag tag-advanced">Advanced</span>
+            <h3>Responsive Layouts with Grid & Flexbox</h3>
+            <p>Build pixel-perfect, fully responsive pages for every screen size.</p>
+            <div class="course-meta">
+              <span><i class="fa-regular fa-clock"></i> 4 weeks</span>
+              <span><i class="fa-solid fa-star"></i> 4.9</span>
+            </div>
+            <button class="btn btn-outline btn-sm view-course-btn">View Details</button>
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="course-card" data-category="programming" data-level="beginner" data-title="Python Programming Foundations">
+          <div class="course-thumb" style="--thumb-img: url('../assets/images/course-python-foundations.jpg');" role="img" aria-label="Python Programming Foundations course"></div>
+          <div class="course-body">
+            <span class="course-tag tag-beginner">Beginner</span>
+            <h3>Python Programming Foundations</h3>
+            <p>Get comfortable with variables, loops, functions, and logic building.</p>
+            <div class="course-meta">
+              <span><i class="fa-regular fa-clock"></i> 6 weeks</span>
+              <span><i class="fa-solid fa-star"></i> 4.8</span>
+            </div>
+            <button class="btn btn-outline btn-sm view-course-btn">View Details</button>
+          </div>
+        </div>
+
+        <!-- Course 7 -->
+        <div class="course-card" data-category="design" data-level="intermediate" data-title="Design Systems & Prototyping">
+          <div class="course-thumb" style="--thumb-img: url('../assets/images/course-design-systems.jpg');" role="img" aria-label="Design Systems course"></div>
+          <div class="course-body">
+            <span class="course-tag tag-intermediate">Intermediate</span>
+            <h3>Design Systems & Prototyping</h3>
+            <p>Create reusable components and interactive prototypes that scale.</p>
+            <div class="course-meta">
+              <span><i class="fa-regular fa-clock"></i> 5 weeks</span>
+              <span><i class="fa-solid fa-star"></i> 4.7</span>
+            </div>
+            <button class="btn btn-outline btn-sm view-course-btn">View Details</button>
+          </div>
+        </div>
+
+        <!-- Course 8 -->
+        <div class="course-card" data-category="data" data-level="advanced" data-title="Intro to Machine Learning">
+          <div class="course-thumb" style="--thumb-img: url('../assets/images/course-machine-learning.jpg');" role="img" aria-label="Intro to Machine Learning course"></div>
+          <div class="course-body">
+            <span class="course-tag tag-advanced">Advanced</span>
+            <h3>Intro to Machine Learning</h3>
+            <p>Understand core ML concepts and build your first predictive models.</p>
+            <div class="course-meta">
+              <span><i class="fa-regular fa-clock"></i> 9 weeks</span>
+              <span><i class="fa-solid fa-star"></i> 4.9</span>
+            </div>
+            <button class="btn btn-outline btn-sm view-course-btn">View Details</button>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="no-results" id="noResults" hidden>
+        No courses match your search. Try a different keyword or filter.
+      </p>
+
+    </div>
+  </section>
+
+
+  <div class="modal-overlay" id="courseModal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <span class="course-tag" id="modalTag">Beginner</span>
+      <h3 id="modalTitle">Course Title</h3>
+      <p id="modalDescription">Course description goes here.</p>
+      <div class="modal-meta">
+        <span><i class="fa-regular fa-clock"></i> <span id="modalDuration">6 weeks</span></span>
+        <span><i class="fa-solid fa-star"></i> <span id="modalRating">4.8</span></span>
+      </div>
+      <button class="btn btn-primary">Enroll Now <span>→</span></button>
+    </div>
+  </div>
+
+
+  <!--footer section-->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col footer-brand">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">Smart Learning Hub</span>
+        </a>
+        <p>Learn Smart. Grow Better.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="../index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Smart Learning Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/courses.js"></script>
+
+</body>
+</html>
